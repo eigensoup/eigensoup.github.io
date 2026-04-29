@@ -21,9 +21,9 @@ role: PhD Student and Founder
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: University of Calfornia, Santa Cruz
-    url: https://www.example.com/
-  - name: Krv Analytics
+  - name: University of California, Santa Cruz
+    url: https://www.ucsc.edu/
+  - name: Krv Labs
     url: https://krv.ai
 
 # Social network links
@@ -77,20 +77,22 @@ education:
 
 work:
   - position: Founder
-    company_name: Krv Analytics LLC
-    company_url: ""
+    company_name: Krv Labs
+    company_url: "https://krv.ai"
     company_logo: ""
     date_start: 2023-05-01
     date_end:
     summary: |
-      One of three founders of Krv Analytics, a startup specializing in knowledge graph generation for tabular data in two independent domains:
-      - Strategizing decarbonization
-      - Analysis of rare genetic diseases in children
+      Founder of Krv Labs, the clinical trial platform for AI models. Krv Labs stress-tests healthcare algorithms before deployment to ensure safety, reliability, and FDA compliance.
 
-      Responsibilities include:
-      - Designed and implemented a novel sparse data graph generation framework with theoretical guarantees
-      - Led core architecture design, coding, and maintenance
-      - Currently managing a team expanding into ESG finance evaluation and data-driven sustainability modeling
+      Key focuses include:
+      - Identifying failure modes such as data shifts and missing labs
+      - Providing clinical evidence to maintain non-device status under 2026 CDS guidance
+      - Backed by NVIDIA Inception and Berkeley SkyDeck
+
+      Responsibilities:
+      - Leading core architecture design and implementation of stress-testing frameworks
+      - Managing technical strategy and team expansion in the healthcare AI space
 
   - position: Software Developer
     company_name: Allosphere, UCSB
