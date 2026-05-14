@@ -7,3 +7,6 @@
 [submodule "quickstart/themes/hugo-coder"]
 	path = quickstart/themes/hugo-coder
 	url = https://github.com/luizdepra/hugo-coder.git
+[submodule "themes/enervoid"]
+	path = themes/enervoid
+	url = https://github.com/Enerhim/enervoid-theme.git

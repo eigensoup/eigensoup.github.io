@@ -1,0 +1,57 @@
+baseURL = 'https://stuartwayland.github.com/'
+languageCode = 'en-us'
+title = "eigensoup"
+theme = "enervoid"
+
+[menus]
+ [[menus.main]]
+ name = 'About'
+ pageRef = '/'
+ weight = 10
+
+ [[menus.main]]
+ name = 'Projects'
+ pageRef = '/projects'
+ weight = 20
+
+[params]
+ avatar = "/avatar.png"
+
+ [[params.socials]]
+ name = "Email"
+ link = "mailto:swayland@ucsc.edu"
+ icon = "fa-solid fa-envelope"
+ [[params.socials]]
+ name = "Github"
+ link = "https://github.com/stuartwayland"
+ icon = "devicon-github-original"
+ [[params.socials]]
+ name = "Twitter"
+ link = "https://X.com/WaylandStuart"
+ icon = "devicon-twitter-original"
+ [[params.socials]]
+ name = "LinkedIn"
+ link = "https://www.linkedin.com/in/stuart-wayland-96b621253/"
+ icon = "devicon-linkedin-plain"
+
+[markup]
+ [markup.goldmark]
+  [markup.goldmark.extensions.passthrough]
+   enable = true
+   [markup.goldmark.extensions.passthrough.delimiters]
+    block = [['$$','$$'], ['\\[','\\]']]
+    inline = [['$','$'], ['\\(','\\)']]
+
+ [markup.goldmark.renderer]
+  unsafe = true
+
+ [markup.goldmark.parser]
+  [markup.goldmark.parser.attribute]
+   block = true
+
+[markup.highlight]
+ noClasses = true
+ codeFences = true
+ guessSyntax = true
+ tabWidth = 4
+ style = "monokai"
