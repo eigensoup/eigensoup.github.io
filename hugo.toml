@@ -1,4 +1,4 @@
-baseURL = 'https://stuartwayland.github.com/'
+baseURL = 'https://eigensoup.github.com/'
 languageCode = 'en-us'
 title = "eigensoup"
 theme = "enervoid"
@@ -23,7 +23,7 @@ theme = "enervoid"
  icon = "fa-solid fa-envelope"
  [[params.socials]]
  name = "Github"
- link = "https://github.com/stuartwayland"
+ link = "https://github.com/eigensoup"
  icon = "devicon-github-original"
  [[params.socials]]
  name = "Twitter"
