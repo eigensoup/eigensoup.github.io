@@ -24,17 +24,17 @@ title: "About"
 Currently pursuing a PhD at the <strong>University of California, Santa Cruz</strong> under <a href="#" class="text-white hover:text-indigo-300 transition-colors">Prof. Alexandra Kolla</a>. 
 </p>
 <p class="mt-4 text-gray-400 leading-relaxed">
-My work sits at the intersection of spectral graph theory, constraint satisfaction problems, and variational quantum algorithms. I focus on developing robust rounding algorithms for SDP relaxations in the context of Local Hamiltonian Problems.
+My work sits at the intersection of spectral graph theory, quantum Hamiltonian complexity, and randomized algorithms. I focus on classical algorithms for ground-state problems such as Quantum Max-Cut and the antiferromagnetic Heisenberg model, and on the spectral theory of random graphs and expanders.
 </p>
 </section>
 
 <section>
 <h2 class="text-xs uppercase tracking-[0.3em] text-indigo-400 mb-6 font-semibold">Krv Labs</h2>
 <p class="text-gray-300 leading-relaxed text-lg md:text-xl font-light">
-Founder of <a href="https://krv.ai" class="text-white hover:text-indigo-300 underline decoration-indigo-500/30 underline-offset-4 transition-all">Krv Labs</a>, the clinical trial platform for AI models.
+Founder of <a href="https://trials.krv.ai" class="text-white hover:text-indigo-300 underline decoration-indigo-500/30 underline-offset-4 transition-all">Krv Labs</a>, where we help clinical trial sites find the patients worth screening.
 </p>
 <p class="mt-4 text-gray-400 leading-relaxed">
-We stress-test healthcare algorithms before deployment to ensure safety, reliability, and FDA compliance. Backed by <strong>NVIDIA Inception</strong> and <strong>Berkeley SkyDeck</strong>.
+Backed by <strong>NVIDIA Inception</strong> and <strong>Berkeley SkyDeck</strong>.
 </p>
 </section>
 </div>
