@@ -1,4 +1,4 @@
-baseURL = 'https://eigensoup.github.com/'
+baseURL = 'https://eigensoup.github.io/'
 languageCode = 'en-us'
 title = "eigensoup"
 theme = "enervoid"
