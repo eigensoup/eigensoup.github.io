@@ -9,7 +9,12 @@ title: "About"
 <div class="flex-1 text-center md:text-left">
 <h1 class="text-5xl md:text-8xl font-bold text-white mb-6 tracking-tighter">Stuart Wayland</h1>
 <p class="text-xl md:text-3xl text-blue-200 font-light mb-8 leading-tight">Optimization in Synthetic Quantum Systems.</p>
+<p class="inline-flex items-center gap-3 px-4 py-2 mb-8 rounded-2xl border border-indigo-500/40 bg-indigo-500/10 text-base md:text-lg text-gray-200">
+<i class="fa-solid fa-building-columns text-indigo-400"></i>
+<span>Currently a Visiting Affiliate at the <a href="https://simons.berkeley.edu" class="text-white hover:text-indigo-300 underline decoration-indigo-500/30 underline-offset-4 transition-all">Simons Institute for the Theory of Computing</a>, UC Berkeley</span>
+</p>
 <div class="flex flex-wrap justify-center md:justify-start gap-6 text-base md:text-lg text-gray-400">
+<span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-indigo-400"></i> Berkeley, CA</span>
 <span class="flex items-center gap-2"><i class="fa-solid fa-graduation-cap text-indigo-400"></i> PhD Student @ UCSC</span>
 <span class="flex items-center gap-2"><i class="fa-solid fa-rocket text-indigo-400"></i> Founder @ Krv Labs</span>
 </div>
@@ -21,7 +26,7 @@ title: "About"
 <section>
 <h2 class="text-xs uppercase tracking-[0.3em] text-indigo-400 mb-6 font-semibold">Research</h2>
 <p class="text-gray-300 leading-relaxed text-lg md:text-xl font-light">
-Currently pursuing a PhD at the <strong>University of California, Santa Cruz</strong> under <a href="#" class="text-white hover:text-indigo-300 transition-colors">Prof. Alexandra Kolla</a>. 
+Currently pursuing a PhD at the <strong>University of California, Santa Cruz</strong> under <a href="#" class="text-white hover:text-indigo-300 transition-colors">Prof. Alexandra Kolla</a>. I am currently living in Berkeley as a visiting affiliate of the <strong>Simons Institute for the Theory of Computing</strong>.
 </p>
 <p class="mt-4 text-gray-400 leading-relaxed">
 My work sits at the intersection of spectral graph theory, quantum Hamiltonian complexity, and randomized algorithms. I focus on classical algorithms for ground-state problems such as Quantum Max-Cut and the antiferromagnetic Heisenberg model, and on the spectral theory of random graphs and expanders.
