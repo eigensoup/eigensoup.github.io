@@ -1,3 +1,8 @@
-.qodo* 
-public* 
-resources
+.qodo*
+node_modules
+.next
+out
+next-env.d.ts
+*.tsbuildinfo
+.DS_Store
+AGENTS.md

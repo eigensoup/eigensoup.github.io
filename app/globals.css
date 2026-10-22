@@ -1,0 +1,383 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f5f0e6;
+  --color-paper-deep: #ece5d6;
+  --color-graphite: #292824;
+  --color-pencil: #77736b;
+  /* pencil darkened just enough for 4.5:1 contrast on paper at small sizes */
+  --color-pencil-ink: #67635b;
+  --color-burgundy: #853f3f;
+  --color-rule: rgb(41 40 36 / 0.16);
+
+  --font-serif: var(--font-newsreader), "Iowan Old Style", Georgia, serif;
+  --font-display: var(--font-garamond), "Garamond", Georgia, serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ------------------------------------------------------------------ paper */
+
+html {
+  background-color: var(--color-paper);
+  color: var(--color-graphite);
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 2rem;
+}
+
+body {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--color-paper);
+  /* faint graph paper and a little grain */
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .16 0 0 0 0 .15 0 0 0 0 .13 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    linear-gradient(to right, rgb(41 40 36 / 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(41 40 36 / 0.03) 1px, transparent 1px);
+  background-size: 180px 180px, 1.75rem 1.75rem, 1.75rem 1.75rem;
+}
+
+::selection {
+  background: rgb(133 63 63 / 0.18);
+}
+
+:focus-visible {
+  outline: 1.5px dashed var(--color-burgundy);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+/* ------------------------------------------------------------- typography */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.15;
+  text-wrap: balance;
+  font-variant-numeric: lining-nums;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+.prose p {
+  hyphens: auto;
+}
+
+.smallcaps {
+  font-family: var(--font-display);
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.06em;
+}
+
+a {
+  text-decoration-line: underline;
+  text-decoration-color: rgb(133 63 63 / 0.35);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition:
+    color 160ms ease,
+    text-decoration-color 160ms ease;
+}
+
+a:hover {
+  color: var(--color-burgundy);
+  text-decoration-color: var(--color-burgundy);
+}
+
+a.plain {
+  text-decoration: none;
+}
+
+/* ------------------------------------------------------------- the layout */
+
+/* Text column with the classic notebook margin rule to its left. */
+.notebook {
+  position: relative;
+}
+
+@media (min-width: 64rem) {
+  .notebook::before {
+    content: "";
+    position: absolute;
+    top: -3rem;
+    bottom: 0;
+    left: -2.25rem;
+    width: 1px;
+    background: rgb(133 63 63 / 0.22);
+    box-shadow: 4px 0 0 rgb(133 63 63 / 0.1);
+  }
+}
+
+/* Tufte-style marginalia: inline on small screens, in the right margin on large ones. */
+.marginnote {
+  display: block;
+  margin: 0.75rem 0 1.25rem;
+  padding-left: 0.85rem;
+  border-left: 1px solid var(--color-rule);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--color-pencil-ink);
+}
+
+.marginnote.decorative {
+  display: none;
+}
+
+@media (min-width: 64rem) {
+  .marginnote,
+  .marginnote.decorative {
+    display: block;
+    float: right;
+    clear: right;
+    width: 14rem;
+    margin: 0.3rem -17.5rem 1rem 0;
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+/* ----------------------------------------------------------------- prose */
+
+.prose {
+  counter-reset: section;
+}
+
+.prose > * + * {
+  margin-top: 1.1em;
+}
+
+.prose h2 {
+  counter-increment: section;
+  font-size: 1.6rem;
+  margin-top: 2.4em;
+  margin-bottom: -0.2em;
+}
+
+.prose h2::before {
+  content: "§" counter(section) "\2002";
+  color: var(--color-burgundy);
+  font-size: 0.8em;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+  font-style: italic;
+  margin-top: 1.8em;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.4em;
+}
+
+.prose ul {
+  list-style: none;
+}
+
+.prose ul > li {
+  position: relative;
+}
+
+.prose ul > li::before {
+  content: "–";
+  position: absolute;
+  left: -1.1em;
+  color: var(--color-pencil);
+}
+
+.prose ol {
+  list-style: decimal;
+}
+
+.prose ol > li::marker {
+  color: var(--color-pencil);
+  font-family: var(--font-display);
+}
+
+.prose li + li {
+  margin-top: 0.35em;
+}
+
+.prose blockquote {
+  padding-left: 1.1em;
+  border-left: 1px solid var(--color-pencil);
+  font-style: italic;
+  color: var(--color-pencil-ink);
+}
+
+.prose hr {
+  border: 0;
+  height: 1px;
+  background: var(--color-rule);
+  margin: 2.5em auto;
+  width: 40%;
+}
+
+.prose :not(pre) > code {
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  padding: 0.05em 0.25em;
+  background: rgb(41 40 36 / 0.05);
+  border-radius: 2px;
+}
+
+.prose pre {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  overflow-x: auto;
+  padding: 1rem 1.25rem;
+  background: rgb(255 255 255 / 0.35);
+  border: 1px solid var(--color-rule);
+  border-left: 2px solid rgb(133 63 63 / 0.45);
+}
+
+.prose img {
+  max-width: 100%;
+  height: auto;
+}
+
+.prose table {
+  width: 100%;
+  font-size: 0.95rem;
+  border-collapse: collapse;
+  border-top: 1px solid var(--color-graphite);
+  border-bottom: 1px solid var(--color-graphite);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.prose th {
+  font-weight: 500;
+  text-align: left;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.prose th,
+.prose td {
+  padding: 0.35em 0.75em 0.35em 0;
+}
+
+/* GFM footnotes: set like the references of a paper */
+.prose .footnotes {
+  margin-top: 3.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-rule);
+  font-size: 0.92rem;
+  color: var(--color-pencil-ink);
+}
+
+.prose .footnotes h2 {
+  font-size: 0.95rem;
+  margin: 0 0 0.5rem;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.08em;
+}
+
+.prose .footnotes h2::before {
+  content: none;
+}
+
+.prose [data-footnote-ref] {
+  text-decoration: none;
+  color: var(--color-burgundy);
+  font-variant-numeric: lining-nums;
+}
+
+.prose [data-footnote-ref]::before {
+  content: "[";
+}
+
+.prose [data-footnote-ref]::after {
+  content: "]";
+}
+
+.prose sup:has([data-footnote-ref]) {
+  vertical-align: baseline;
+  font-size: 0.85em;
+}
+
+/* ---------------------------------------------------------------- KaTeX */
+
+.katex {
+  font-size: 1.04em;
+}
+
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.35em 0;
+  margin: 1.4em 0;
+}
+
+/* ---------------------------------------------------------------- sketches */
+
+.sketch {
+  color: var(--color-graphite);
+}
+
+.sketch .ink {
+  stroke: currentColor;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.sketch .accent {
+  stroke: var(--color-burgundy);
+}
+
+/* Lines are drawn on as if by pencil; every path uses pathLength="1". */
+.sketch.draw .ink {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 1.4s cubic-bezier(0.6, 0.1, 0.3, 1) forwards;
+  animation-delay: calc(var(--i, 0) * 70ms + 200ms);
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.fade-in {
+  animation: fade-in 700ms ease both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .sketch.draw .ink {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

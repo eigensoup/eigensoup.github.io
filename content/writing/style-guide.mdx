@@ -1,0 +1,49 @@
+---
+title: "A Specimen Page"
+date: 2026-10-22
+draft: true
+summary: >-
+  A draft that exercises every feature of the writing layout — mathematics, citations,
+  figures, marginal notes, and code. Drafts appear only in development.
+---
+
+This page is a specimen, not an essay. It is marked `draft: true`, so it renders under
+`pnpm dev` but is excluded from the production build.
+
+## Mathematics
+
+Inline mathematics such as $\lambda_2(G) \le \varepsilon d$ sits on the baseline of the text.
+Display mathematics is set apart:
+
+<MarginNote>The Heisenberg Hamiltonian, with one term per edge of $G$.</MarginNote>
+
+$$
+H_G \;=\; \sum_{(i,j) \in E} \frac{1}{4}\left( I - X_iX_j - Y_iY_j - Z_iZ_j \right).
+$$
+
+<Theorem kind="Lemma" n="1">
+  If $G$ is $d$-regular, then the all-ones vector is an eigenvector of $A_G$ with eigenvalue $d$.
+</Theorem>
+
+<Proof>
+  Each row of $A_G$ has exactly $d$ ones.
+</Proof>
+
+## Citations
+
+Footnotes double as citations.[^1] They are collected at the end of the page.
+
+## Figures
+
+<Figure caption="The Petersen graph, drawn by hand.">
+  <PetersenGraph />
+</Figure>
+
+## Code
+
+```python
+def degree(adj, v):
+    return sum(adj[v])
+```
+
+[^1]: S. Wayland, Z. Jorquera, A. Kolla. *Classical Algorithms for Bipartite Quantum Max-Cut on Dense Expanders*. arXiv:2610.03670, 2026.
