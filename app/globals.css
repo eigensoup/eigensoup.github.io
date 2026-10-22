@@ -384,7 +384,4 @@ a.plain {
   body {
     background: white;
   }
-  .no-print {
-    display: none !important;
-  }
 }
