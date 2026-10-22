@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-// Static export: the site is served from GitHub Pages (main:/docs).
+// Static export; Vercel serves out/ and applies the redirects in vercel.json.
 const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,

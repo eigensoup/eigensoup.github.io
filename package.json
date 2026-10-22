@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:docs": "next build && rm -rf docs && cp -R out docs",
     "start": "python3 -m http.server 3000 -d out",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit"

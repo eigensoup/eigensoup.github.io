@@ -84,16 +84,4 @@ export function formatDate(date: string, style: "year" | "long" = "long") {
   return d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
 }
 
-/**
- * Hugo served the papers under /projects/. They now live under /research/;
- * these old paths get static redirect pages.
- */
-export const LEGACY_REDIRECTS: Record<string, string> = {
-  "/projects/classical-algorithms-bipartite-quantum-max-cut/": "/research/classical-algorithms-bipartite-quantum-max-cut/",
-  "/projects/monogamy-of-entanglement/": "/research/monogamy-of-entanglement/",
-  "/projects/approximation-algorithms-quantum-max-d-cut/": "/research/approximation-algorithms-quantum-max-d-cut/",
-  "/categories/": "/",
-  "/tags/": "/",
-};
-
 export const allEntries = () => [...load("research"), ...load("projects"), ...load("writing")];

@@ -4,27 +4,20 @@ import { notFound } from "next/navigation";
 import { LinkList } from "@/components/entries";
 import { MathText, plainText } from "@/components/math";
 import { MDX } from "@/components/mdx";
-import { RedirectStub, redirectMetadata } from "@/components/redirect";
-import { formatDate, getEntries, getEntry, LEGACY_REDIRECTS } from "@/lib/content";
+import { formatDate, getEntries, getEntry } from "@/lib/content";
 
 type Props = { params: Promise<{ slug: string }> };
 
 export const dynamicParams = false;
 
-const legacy = (slug: string) => LEGACY_REDIRECTS[`/projects/${slug}/`];
-
 export function generateStaticParams() {
-  const pages = getEntries("projects").filter((e) => e.page);
-  const moved = Object.keys(LEGACY_REDIRECTS)
-    .filter((p) => p.startsWith("/projects/"))
-    .map((p) => p.split("/")[2]);
-  return [...pages.map((e) => e.slug), ...moved].map((slug) => ({ slug }));
+  return getEntries("projects")
+    .filter((e) => e.page)
+    .map((e) => ({ slug: e.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  if (legacy(slug)) return redirectMetadata(legacy(slug));
-  const e = getEntry("projects", slug);
+  const e = getEntry("projects", (await params).slug);
   if (!e) return {};
   return {
     title: plainText(e.title),
@@ -34,9 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function Project({ params }: Props) {
-  const { slug } = await params;
-  if (legacy(slug)) return <RedirectStub to={legacy(slug)} />;
-  const e = getEntry("projects", slug);
+  const e = getEntry("projects", (await params).slug);
   if (!e) notFound();
   return (
     <article>

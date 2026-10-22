@@ -2,13 +2,8 @@ import katex from "katex";
 import { Fragment } from "react";
 
 /** Typeset a TeX expression at build time; no KaTeX JavaScript reaches the browser. */
-export function Tex({ children, display = false }: { children: string; display?: boolean }) {
-  const html = katex.renderToString(children, { displayMode: display, throwOnError: false });
-  return display ? (
-    <div dangerouslySetInnerHTML={{ __html: html }} />
-  ) : (
-    <span dangerouslySetInnerHTML={{ __html: html }} />
-  );
+export function Tex({ children }: { children: string }) {
+  return <span dangerouslySetInnerHTML={{ __html: katex.renderToString(children, { throwOnError: false }) }} />;
 }
 
 function withMath(text: string) {

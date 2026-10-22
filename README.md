@@ -1,12 +1,13 @@
 # stu.at.waylands.com
 
-Personal site of Stuart Wayland — a statically exported Next.js (App Router) site.
+Personal site of Stuart Wayland — a statically exported Next.js (App Router) site, deployed by
+Vercel from `main`.
 
 ```sh
 pnpm install
 pnpm dev          # http://localhost:3000 (drafts visible)
 pnpm build        # static export to out/
-pnpm build:docs   # build and copy out/ to docs/, which GitHub Pages serves from main
+pnpm start        # serve out/ locally
 pnpm lint && pnpm typecheck
 ```
 
@@ -21,4 +22,4 @@ citations, and the components `<MarginNote>`, `<Figure>`, `<Theorem>`, `<Proof>`
 sketches in `components/sketches.tsx`. `content/writing/style-guide.mdx` is a draft specimen of
 every feature; drafts render only in development.
 
-Moved URLs are listed in `LEGACY_REDIRECTS` (`lib/content.ts`) and get meta-refresh pages.
+Permanent redirects for URLs from the old Hugo site live in `vercel.json`.
