@@ -255,6 +255,14 @@ a.plain {
   font-variant-numeric: lining-nums tabular-nums;
 }
 
+/* Wide tables scroll within the column on narrow screens rather than widening the page. */
+@media (max-width: 40rem) {
+  .prose table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
 .prose th {
   font-weight: 500;
   text-align: left;
@@ -326,7 +334,6 @@ a.plain {
 
 .sketch .ink {
   stroke: currentColor;
-  vector-effect: non-scaling-stroke;
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
@@ -369,7 +376,7 @@ a.plain {
     transition: none !important;
   }
   .sketch.draw .ink {
-    stroke-dashoffset: 0;
+    stroke-dasharray: none;
   }
 }
 

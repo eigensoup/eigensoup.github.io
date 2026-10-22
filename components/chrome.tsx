@@ -4,7 +4,7 @@ import { NavLinks } from "./nav-links";
 
 export function Header() {
   return (
-    <header className="mx-auto flex w-full max-w-[64rem] flex-wrap items-baseline justify-between gap-x-8 gap-y-2 px-5 pt-8 pb-4 sm:px-8 lg:pt-10">
+    <header className="mx-auto flex w-full max-w-[64rem] flex-wrap items-baseline justify-between gap-x-8 gap-y-1 px-5 pt-6 pb-2 sm:px-8 sm:pt-8 lg:pt-10">
       <Link href="/" className="plain font-display text-xl tracking-wide">
         Stuart Wayland
       </Link>

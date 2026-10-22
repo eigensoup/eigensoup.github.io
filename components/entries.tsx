@@ -16,7 +16,7 @@ export function LinkList({ links }: { links: LinkT[] }) {
   return (
     <span className="inline-flex flex-wrap gap-x-3">
       {links.map((l) => (
-        <a key={l.href} href={l.href} className="smallcaps">
+        <a key={l.href} href={l.href} className="smallcaps inline-block py-1">
           {l.label}
         </a>
       ))}
@@ -47,7 +47,7 @@ export function BibEntry({ entry, n, abstract = false }: { entry: Entry; n: numb
         </p>
         {abstract && entry.summary && (
           <details className="group mt-2 text-[0.97rem]">
-            <summary className="smallcaps w-fit cursor-pointer list-none text-pencil-ink hover:text-burgundy [&::-webkit-details-marker]:hidden">
+            <summary className="smallcaps w-fit cursor-pointer list-none py-1.5 text-pencil-ink hover:text-burgundy [&::-webkit-details-marker]:hidden">
               <span className="inline-block transition-transform group-open:rotate-90">›</span> Abstract
             </summary>
             <p className="mt-2 border-l border-rule pl-4 text-graphite/90">

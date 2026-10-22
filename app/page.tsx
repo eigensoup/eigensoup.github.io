@@ -38,7 +38,7 @@ export default function Home() {
             className="w-40 -rotate-[1.5deg] border border-rule bg-paper-deep p-1.5 mix-blend-multiply"
           />
         </aside>
-        <h1 className="relative inline-block text-[3.25rem] leading-[0.95] sm:text-7xl">
+        <h1 className="relative inline-block text-[clamp(2.4rem,12vw,4.5rem)] leading-[0.95]">
           Stuart Wayland
           <PencilUnderline draw className="absolute -bottom-3 left-0 h-4 w-full" />
         </h1>
@@ -89,7 +89,7 @@ export default function Home() {
           ))}
         </ol>
         <p className="mt-6 pl-[2.25rem] sm:pl-12">
-          <Link href="/research/" className="smallcaps">
+          <Link href="/research/" className="smallcaps inline-block py-1">
             All research &rarr;
           </Link>
         </p>
@@ -131,7 +131,7 @@ export default function Home() {
             </div>
           </dl>
           <p className="mt-4">
-            <Link href="/cv/" className="smallcaps">
+            <Link href="/cv/" className="smallcaps inline-block py-1">
               Curriculum vitæ &rarr;
             </Link>
           </p>

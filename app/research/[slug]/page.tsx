@@ -54,7 +54,7 @@ export default async function Paper({ params }: Props) {
       </header>
 
       <section aria-label="Abstract" className="mx-auto mb-10 max-w-[34rem] text-[1rem] leading-relaxed">
-        <p className="hyphens-auto text-justify">
+        <p className="hyphens-auto sm:text-justify">
           <span className="smallcaps mr-1 font-medium">Abstract.</span>
           <MathText text={e.summary} />
         </p>
