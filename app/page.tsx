@@ -89,7 +89,7 @@ export default function Home() {
           ))}
         </ol>
         <p className="mt-6 pl-[2.25rem] sm:pl-12">
-          <Link href="/research/" className="smallcaps">
+          <Link href="/research/" className="smallcaps inline-block py-1">
             All research &rarr;
           </Link>
         </p>
@@ -131,7 +131,7 @@ export default function Home() {
             </div>
           </dl>
           <p className="mt-4">
-            <Link href="/cv/" className="smallcaps">
+            <Link href="/cv/" className="smallcaps inline-block py-1">
               Curriculum vitæ &rarr;
             </Link>
           </p>

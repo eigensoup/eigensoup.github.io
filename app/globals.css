@@ -334,7 +334,6 @@ a.plain {
 
 .sketch .ink {
   stroke: currentColor;
-  vector-effect: non-scaling-stroke;
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
@@ -377,7 +376,7 @@ a.plain {
     transition: none !important;
   }
   .sketch.draw .ink {
-    stroke-dashoffset: 0;
+    stroke-dasharray: none;
   }
 }
 
