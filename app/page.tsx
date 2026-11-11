@@ -140,7 +140,7 @@ export default function Home() {
           <h2 id="tools" className="smallcaps mb-3 text-[1.1rem]">
             Core stack
           </h2>
-          <p className="text-pencil-ink">Python, Qiskit, Mathematica, and spectral theory.</p>
+          <p className="text-pencil-ink">Mathematica, Lean, Qiskit, Python, Rust, and Node.js.</p>
         </section>
       </div>
     </>
