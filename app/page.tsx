@@ -141,10 +141,6 @@ export default function Home() {
             Core stack
           </h2>
           <p className="text-pencil-ink">Python, Qiskit, Mathematica, and spectral theory.</p>
-          <h2 className="smallcaps mt-6 mb-3 text-[1.1rem]">Beyond the lab</h2>
-          <p className="text-pencil-ink">
-            When I&rsquo;m not in front of a terminal, you can find me surfing, climbing, or making music.
-          </p>
         </section>
       </div>
     </>
